@@ -1,12 +1,20 @@
-import React, { useState} from 'react';
+import React, { useState, useContext} from 'react';
+import ThemeContext from '../../context';
 
 export const Counter = () => {
-    let [counter, incrementer] = useIncrementer(1,2);
+    let [increment, setIncrement] = useState(1);
+    let [counter, incrementer] = useIncrementer(0,increment);
+    let theme = useContext(ThemeContext);
 
-    return <>
-        <button onClick={incrementer}>Increment</button>
+    function handleIncrementChange(e) {
+        setIncrement(parseInt(e.target.value));
+    }
+
+    return <section className={theme}>
         <p>{counter}</p>
-    </>
+        <button onClick={incrementer}>Increment</button>
+        <input type="number" value={increment} onChange={handleIncrementChange}/>
+    </section>
 }
 
 
