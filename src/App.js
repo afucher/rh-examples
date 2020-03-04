@@ -11,18 +11,18 @@ function App() {
       <div className="App">
         <Route path="/" exact render={() => {
           return <>
-            <ThemeContext.Provider value="blue">
+            <ThemeContext.Provider value="dark">
               <Counter />
             </ThemeContext.Provider>
-            <ThemeContext.Provider value="yellow">
+            <ThemeContext.Provider value="light">
               <CounterHooks />
             </ThemeContext.Provider>
           </>
         }} />
-        <ThemeContext.Provider value="blue">
+        <ThemeContext.Provider value="dark">
           <Route path="/class" component={Counter} />
         </ThemeContext.Provider>
-        <ThemeContext.Provider value="yellow">
+        <ThemeContext.Provider value="light">
           <Route path="/function" component={CounterHooks} />
         </ThemeContext.Provider>
       </div>
