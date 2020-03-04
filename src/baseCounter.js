@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Counter = () => {
+export const Counter = () => {
     return <section>
         <p>0</p>
     </section>
